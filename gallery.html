@@ -13,48 +13,62 @@
         height: 100vh;
     }
 
-    .gallery1 {
-        display: ;
-        position: absolute;
-        padding-top: 20px;
-        padding-right: 20%;
-        width: 80%;
+    img {
+        display: none;
     }
 
-    .gallery2 {
-        display: none;
-        position: absolute;
-        padding-top: 20px;
-        padding-right: 20%;
-        width: 80%;
+    .show {
+        display: block;
     }
 
-    .gallery3 {
+    .hide {
         display: none;
-        position: absolute;
-        padding-top: 20px;
-        padding-right: 20%;
-        width: 80%;
     }
 </style>
 <script>
+    const imgElements = document.getElementsByTagName(
+    'img'); //[document.getElementById('one'), document.getElementById('two'), document.getElementById('three')];
+    let currentPic = 0;
+    // imgElements[0].classList.add('show');
 
+    // function ChangeMe() {;
+    //     let galleryPhoto = document.getElementById('one')
+    //     galleryPhoto.src = "2.jpg"
+    // }
+    console.log('currentPic', currentPic);
 
-function ChangeMe() {
-    let galleryPhoto = document.getElementById('one')
-    galleryPhoto.src = "2.jpg"
-}
-
-function left() {
-        console.log(document.getElementsById ('one').value);
+    function left() {
+        // console.log(document.getElementsById('one').value);
+        if (currentPic === 0) {
+            currentPic = 2;
+            imgElements[0].className == 'hide';
+        } else {
+            currentPic = currentPic - 1;
+            imgElements[currentPic - 1].className = 'hide';
+        }
+        console.log('elem', currentPic, imgElements[currentPic]);
+        imgElements[currentPic].className = 'show';
+        // imgElements[currentPic - 1)].className = 'hide';
     }
 
-    function right() {
-        console.log(document.getElementsById ('').value);
+    function right() { // console.log(document.getElementsById('one').value);
+        if (currentPic === 0) {
+            currentPic = 1;
+            imgElements[1].className == 'hide';
+        } else {
+            currentPic = currentPic - 2;
+
+            imgElements[currentPic - 2].className = 'hide';
+        }
+        console.log('elem', currentPic, imgElements[currentPic]);
+        imgElements[currentPic].className = 'show';
+        // imgElements[currentPic - 1)].className = 'hide';
     }
+    // console.log(document.getElementsById('').value
+
     //let imgs = document.getElementsByTagName('img');
-   
-   // document.getElementsById('1')[0].value = 0;
+
+    // document.getElementsById('1')[0].value = 0;
     //document.getElementsById('2')[0].value = 1;
     //document.getElementsById('3')[0].value = 2;
 
@@ -65,17 +79,17 @@ function left() {
         currentPic.src = "2.jpg";
     }*/
 
-   /* function select(gallery2) {
-        sender.classList.add("selected");
-    }*/
+    /* function select(gallery2) {
+         sender.classList.add("selected");
+     }*/
 </script>
 
 <body>
     <div class="container_gallery" id="galleryTotal">
         <button onclick="left()"> left </button>
-        <div class="gallery1"><img src="/1.jpg" id="one"></div>
-        <div class="gallery2"><img src="/2.jpg" id="two"></div>
-        <div class="gallery3"><img src="/3.jpg" id="three"></div>
+        <img src="/1.jpg" id="one" class="none">
+        <img src="/2.jpg" id="two" class="none">
+        <img src="/3.jpg" id="three" class="none">
         <button onclick="right()"> right </button>
     </div>
 </body>
