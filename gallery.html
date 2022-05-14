@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 14</title>
+</head>
+<style>
+    .container_gallery {
+        margin: 10%;
+        height: 100vh;
+    }
+
+    .gallery1 {
+        display: ;
+        position: absolute;
+        padding-top: 20px;
+        padding-right: 20%;
+        width: 80%;
+    }
+
+    .gallery2 {
+        display: none;
+        position: absolute;
+        padding-top: 20px;
+        padding-right: 20%;
+        width: 80%;
+    }
+
+    .gallery3 {
+        display: none;
+        position: absolute;
+        padding-top: 20px;
+        padding-right: 20%;
+        width: 80%;
+    }
+</style>
+<script>
+    function ClickMe() {
+        console.log(document.getElementsById ('2').value);
+    }
+function left() {
+    let artistImage=document.getElementById('Two');
+    Two.src="2.jpg";
+}
+
+ 
+    }
+    //let imgs = document.getElementsByTagName('img');
+   
+   // document.getElementsById('1')[0].value = 0;
+    //document.getElementsById('2')[0].value = 1;
+    //document.getElementsById('3')[0].value = 2;
+
+
+
+    /*function left() {
+        let currentPic = document.getElementById('2');
+        currentPic.src = "2.jpg";
+    }*/
+
+   /* function select(gallery2) {
+        sender.classList.add("selected");
+    }*/
+
+
+    }
+</script>
+
+<body>
+    <div class="container_gallery" id="galleryTotal">
+        <button onclick="ClickMe()"> left </button>
+        <div class="gallery1"><img src="/1.jpg" id="1"></div>
+        <div class="gallery2"><img src="/2.jpg" id="2"></div>
+        <div class="gallery3"><img src="/3.jpg" id="3"></div>
+        <button onclick="right()"> right </button>
+    </div>
+</body>
+
+</html>
