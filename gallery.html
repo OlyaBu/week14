@@ -38,15 +38,19 @@
     }
 </style>
 <script>
-    function ClickMe() {
-        console.log(document.getElementsById ('2').value);
-    }
-function left() {
-    let artistImage=document.getElementById('Two');
-    Two.src="2.jpg";
+
+
+function ChangeMe() {
+    let galleryPhoto = document.getElementById('one')
+    galleryPhoto.src = "2.jpg"
 }
 
- 
+function left() {
+        console.log(document.getElementsById ('one').value);
+    }
+
+    function right() {
+        console.log(document.getElementsById ('').value);
     }
     //let imgs = document.getElementsByTagName('img');
    
@@ -64,17 +68,14 @@ function left() {
    /* function select(gallery2) {
         sender.classList.add("selected");
     }*/
-
-
-    }
 </script>
 
 <body>
     <div class="container_gallery" id="galleryTotal">
-        <button onclick="ClickMe()"> left </button>
-        <div class="gallery1"><img src="/1.jpg" id="1"></div>
-        <div class="gallery2"><img src="/2.jpg" id="2"></div>
-        <div class="gallery3"><img src="/3.jpg" id="3"></div>
+        <button onclick="left()"> left </button>
+        <div class="gallery1"><img src="/1.jpg" id="one"></div>
+        <div class="gallery2"><img src="/2.jpg" id="two"></div>
+        <div class="gallery3"><img src="/3.jpg" id="three"></div>
         <button onclick="right()"> right </button>
     </div>
 </body>
