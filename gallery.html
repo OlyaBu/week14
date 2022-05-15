@@ -20,78 +20,50 @@
     .show {
         display: block;
     }
-
-    .hide {
-        display: none;
-    }
 </style>
-<script>
-    const imgElements = document.getElementsByTagName(
-    'img'); //[document.getElementById('one'), document.getElementById('two'), document.getElementById('three')];
-    let currentPic = 0;
-    // imgElements[0].classList.add('show');
-
-    // function ChangeMe() {;
-    //     let galleryPhoto = document.getElementById('one')
-    //     galleryPhoto.src = "2.jpg"
-    // }
-    console.log('currentPic', currentPic);
-
-    function left() {
-        // console.log(document.getElementsById('one').value);
-        if (currentPic === 0) {
-            currentPic = 2;
-            imgElements[0].className == 'hide';
-        } else {
-            currentPic = currentPic - 1;
-            imgElements[currentPic - 1].className = 'hide';
-        }
-        console.log('elem', currentPic, imgElements[currentPic]);
-        imgElements[currentPic].className = 'show';
-        // imgElements[currentPic - 1)].className = 'hide';
-    }
-
-    function right() { // console.log(document.getElementsById('one').value);
-        if (currentPic === 0) {
-            currentPic = 1;
-            imgElements[1].className == 'hide';
-        } else {
-            currentPic = currentPic - 2;
-
-            imgElements[currentPic - 2].className = 'hide';
-        }
-        console.log('elem', currentPic, imgElements[currentPic]);
-        imgElements[currentPic].className = 'show';
-        // imgElements[currentPic - 1)].className = 'hide';
-    }
-    // console.log(document.getElementsById('').value
-
-    //let imgs = document.getElementsByTagName('img');
-
-    // document.getElementsById('1')[0].value = 0;
-    //document.getElementsById('2')[0].value = 1;
-    //document.getElementsById('3')[0].value = 2;
-
-
-
-    /*function left() {
-        let currentPic = document.getElementById('2');
-        currentPic.src = "2.jpg";
-    }*/
-
-    /* function select(gallery2) {
-         sender.classList.add("selected");
-     }*/
-</script>
 
 <body>
     <div class="container_gallery" id="galleryTotal">
         <button onclick="left()"> left </button>
-        <img src="/1.jpg" id="one" class="none">
-        <img src="/2.jpg" id="two" class="none">
-        <img src="/3.jpg" id="three" class="none">
+        <img src="./1.jpg" id="one" class="show img">
+        <img src="./2.jpg" id="two" class="img">
+        <img src="./3.jpg" id="three" class="img">
         <button onclick="right()"> right </button>
     </div>
 </body>
+
+<script>
+    const imgElements = Array.from(document.querySelectorAll('.img'));
+    let currentPic = 0;
+    console.log('currentPic', currentPic);
+
+    const lastIndex = imgElements.length - 1
+    const firstIndex = 0;
+
+    function dropShow() {
+        imgElements.forEach(element => element.classList.remove('show'))
+    }
+
+    function left() {
+        dropShow();
+        if (currentPic === firstIndex) {
+            currentPic = lastIndex;
+            imgElements[currentPic].classList.add('show');
+        } else {
+            currentPic = currentPic - 1;
+        }
+        imgElements[currentPic].classList.add('show');
+    }
+
+    function right() {
+        dropShow();
+        if (currentPic === lastIndex) {
+            currentPic = 0;
+        } else {
+            currentPic = currentPic + 1;
+        }
+        imgElements[currentPic].classList.add('show');
+    }
+</script>
 
 </html>
