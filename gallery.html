@@ -15,30 +15,29 @@
         height: 30vh;
         width: 30vw;
     }
-  
 </style>
 
 
 <body>
     <div class="container_gallery" id="galleryTotal">
-       
-    
+
+
         <button onclick="left();"> left </button>
         <img src="../2.jpg" id="secondImage" class="img">
         <button onclick="right();"> right </button>
-    <script>
-        function left() {
-            let secondImage = document.getElementById('secondImage');
-            secondImage.src =
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsjOSKmgZIy26eDesNY2DXOcxSQmfRqlqIffjvk9U1n9knP9gJUMQ1iChbGgX83kaILB0&usqp=CAU";
+        <script>
+            function left() {
+                let secondImage = document.getElementById('secondImage');
+                secondImage.src =
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsjOSKmgZIy26eDesNY2DXOcxSQmfRqlqIffjvk9U1n9knP9gJUMQ1iChbGgX83kaILB0&usqp=CAU";
             }
 
-        function right() {
-            let secondImage = document.getElementById('secondImage');
-            secondImage.src =
-                "/3.jpg";
-        }
-    </script>
+            function right() {
+                let secondImage = document.getElementById('secondImage');
+                secondImage.src =
+                    "/3.jpg";
+            }
+        </script>
 </body>
 
 </html>
